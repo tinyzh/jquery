@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div class="foo">点我关闭</div>
+
+
+
+
+
+<script src="jquery.js"></script>
+<script>
+    $("<div/>",{
+        "class":"test",
+        text:"click me!",
+        click:function(){
+            $(this).toggleClass("test");
+        }
+    }).appendTo("body");
+
+    $("div.foo").click(function(){
+        $(this).slideUp();
+    });
+</script>
+</body>
+</html>
