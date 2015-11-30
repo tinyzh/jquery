@@ -8,6 +8,7 @@
 <body>
 <div class="foo">点我关闭</div>
 
+<div id="jj" class="ll">lll</div>
 
 
 
@@ -25,6 +26,13 @@
     $("div.foo").click(function(){
         $(this).slideUp();
     });
+
+    var str = 'asd';
+    //console.log(str.charAt(1));
+
+    var pp = $('.ll');
+    console.log(pp.context);
+
 </script>
 </body>
 </html>
