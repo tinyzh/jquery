@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    jQuery.fn = jQuery.prototype = function(){
+        constructor:jQuery
+    }
+    上面为什么要添加这么一句话  constructor:jQuery
+
+    假设：
+    var A = function(){}
+    现在就回自动生成一个：A.prototype.constructor = A
+
+   1. A.prototype.name = 'zz';
+
+   2. A.prototype = {
+        'name' : 'zz'
+    }
+
+    1的情况是往构造函数A的原型上添加一个name的属性  本身的A.prototype.constructor 是不会被修改的
+    2的情况是把一个对象{'name':'zz'}赋值给A.prototype  现在A的constructor就直接指向{}的构造函数Object了
+        到后面需要使用extend或者别的方式往jQuery的原型上挂载属性或方法的时候   constructor就不会指向到别的地方去了
+
+</body>
+</html>

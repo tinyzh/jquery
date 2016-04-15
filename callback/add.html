@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery2.0.3.js"></script>
+</head>
+<body>
+<script>
+    var cb = $.Callbacks();
+
+    function a(){
+        alert(1);
+    }
+    cb.add(a);
+    (function(){
+        function b(){
+            alert(2);
+        }
+        cb.add(b);
+    })();
+
+    cb.fire();
+
+</script>
+</body>
+</html>

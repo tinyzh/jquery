@@ -5,12 +5,14 @@
     <title></title>
     <script src="../jquery.js"></script>
     <script>
-        $("<div><div/>",{
-            "class":'cur',
-            text:'我是新的内容'
-        }).append('body');
-        console.log(1);
-
+       $('#aa').selector;
+        var arr = [1,2,3,4];
+       var str = '1234';
+        var res = Array.prototype.slice.call(str,0,1);
+        console.log(res);
+        $(function(){
+            $('p').find('span').text('im123').end().find('em').text('im456');
+        });
 
     </script>
 </head>
@@ -18,5 +20,14 @@
     <div id="aa">
         sdf&nbsp;&copy;&reg;&trade;
     </div>
+    <p><span>123</span><em>456</em></p>
+
+
+    <script>
+        function eq(i){
+            i = +；
+            return i === -1 ? this.slice(i) : this.slice(i,i+1);
+        }
+    </script>
 </body>
 </html>
